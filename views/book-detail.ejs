@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head',{title:book.name}) %>
+<body>
+	<%- include('includes/header') %>
+	
+		<main id="book-detail">
+			<h1>
+				<%=book.name%>
+			</h1>
+			<section class="book-meta">
+				<address>
+					<a href="#"><%=book.AUTHORS_EMAIL%></a>
+				</address>
+				<time datetime="<%=book.date%>"><%=book.humanReadableDate%></time>
+			</section>
+			<section>
+				<p>
+					<%=book.body%>
+				</p>
+			</section>
+			
+		</main>
+	
+</body>
+</html>

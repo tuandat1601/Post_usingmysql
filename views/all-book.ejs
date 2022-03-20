@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('includes/head',{title:'All book'})%>
+<body>
+	<%-include('includes/header') %>
+	<div class="container">
+		<h1 class="title">All book</h1>
+					<%if(!books||books.length===0){%>
+				<p>No book found - maybe start creating some?</p>
+				<a href="/Create-book" class="btn">Create new book</a>
+			<% } else { %>
+				<ul class="list__item">
+				<% for (const book of books){%>
+					<li>
+						<%-include('includes/book-item', {book:book}) %>
+					</li>
+					<%}%>
+				</ul>
+			<%}%>
+		
+	</div>
+</body>
+</html>

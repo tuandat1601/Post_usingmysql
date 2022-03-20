@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%- include ('includes/head',{title:'Update book'})%>
+</head>
+<body>
+	<%-include('includes/header') %>
+	<div class="container">
+		<h1 class="title">Update book</h1>
+		<form action="/All-book/<%=book.id%>/edit" method="POST">
+			<div class="form-control">
+				<label for="title">Title</label>
+				<input value="<%=book.name%>" type="text" id="title"name="title" required>
+			</div>
+			<div class="form-control">
+				<label for="summary">Summary</label>
+				<input value="<%=book.summary%>" type="text" id="summary"name="summary" required>
+			</div>
+			<div class="form-control">
+				<label for="content">Content</label>
+				<textarea  type="text" id="content"name="content" rows="5" required><%=book.body%></textarea>
+			</div>
+			<div class="form-control">
+				<label for="datetime">DateTime</label>
+				<input value="<%=book.date%>"  type="date" id="datetime" name="datetime">
+			</div>
+			<div class="form-control">
+				<label for="select">Select author</label>
+				<select id="author" name="author">
+					<% for (const author of authors) {%>
+						<option value ="<%=author.id%>"><%=author.name%></option>
+					<% } %>
+					</select>
+			</div>
+			
+			<button class="btn">Update book</button>
+		</form>
+	</div>
+</body>
+</html>
